@@ -28,7 +28,7 @@ public class AmericanFlag {
 			if (i % 2 == 1) {
 				color = Color.white;
 			}
-			stripe[i] = new Rectangle(x, y+i*stripeHeight, width, stripeHeight, color);
+			stripes[i] = new Rectangle(x, y+i*stripeHeight, width, stripeHeight, color);
 			
 		}
 
