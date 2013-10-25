@@ -1,49 +1,21 @@
+import java.awt.*;
+import java.applet.*;
+
 public class Rectangle {
 
 	private Point topLeft;
-	private int width;
-	private int height;
+	private int width, height;
+	private Color color;
 
-	public void Rectangle(int x, int y, int width, int height) {
-		Point topLeft = new Point(x, y);
-		setWidth(width);
-		setHeight(height);
-	}
-
-	public void Stripes() {
-		for (int i=0; i<=13; i++) {
-			if (i%2=1) {
-				g.setColor(Color.red);
-			} else {
-				g.setColor(Color.white);
-			}
-			g.fillRect(topLeft, width, height);
-		}
-	}
-
-	public void createUnion() {
-		g.setColor(Color.blue);
-		g.fillRect(topLeft, width, height);
-	}
-
-	public int setWidth(int width) {
+	public Rectangle(int x, int y, int width, int height) {
+		this.topLeft = new Point(x, y);
 		this.width = width;
-	}
-
-	public int setHeight(int height) {
 		this.height = height;
 	}
 
-	public Point setTopLeft(Point topLeft) {
-		this.topLeft = 
+	public void draw(Graphics g) {
+		Color originalColor = g.getColor();
+		g.setColor(color);
+		g.fillRect(topLeft.getX(), topLeft.getY(), width, height, color);
 	}
-
-	public int width() {
-		return width;
-	}
-
-	public int height() {
-		return height;
-	}
-	
 }
